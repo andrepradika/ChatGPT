@@ -2,13 +2,34 @@
 
 ChatGPT clone is a simple web application powered by the OpenAI library and built with PHP. It allows users to chat with an AI language model that responds in real-time. Chat history is saved using cookies, and the project requires the use of an API key and enabled SQLite3.
 
+## Table of Contents
+- [Prerequisites](#prerequisites)
+- [Get Started](#get-started)
+  - [Enable sqlite3](#enable-sqlite3)
+  - [Clone this repository](#clone-this-repository)
+  - [Navigate to the project directory](#navigate-to-the-project-directory)
+  - [Install OrhanErday/OpenAI](#install-orhanerdayopenai)
+  - [Set your OpenAI API key](#set-your-openai-api-key)
+  - [Start the PHP built-in web server](#start-the-php-built-in-web-server)
+  - [Open your web browser](#open-your-web-browser)
+- [Live Demo Video](#live-demo-video)
+- [Important Notice](#important-notice)
+- [Donation](#donation)
+- [Join our discord server](#join-our-discord-server)
+- [GPT-4](#gpt-4)
+- [Using Docker](#using-docker)
+  - [Method I](#method-i)
+  - [Method II](#method-ii)
+- [Chat History](#chat-history)
+- [Tools Explanation](#tools-explanation)
+- [Credits](#credits)
+
 ## Prerequisites
 Before running this project, you should have the following:
 
 * PHP 7.4 or later with SQLite3 enabled
 * Composer
 * An OpenAI API key (which should be set to the $open_ai_key variable in event-stream.php)
-Getting Started
 
 ## Get Started
 
@@ -20,31 +41,34 @@ Getting Started
 * Save the file.
 * Restart the web server.
 
-* ### Clone this repository to your local machine
+### Clone this repository to your local machine
 ```sh
 git clone https://github.com/orhanerday/ChatGPT.git
 ```
-* ### Navigate to the project directory
+
+### Navigate to the project directory
 ```sh
 cd ChatGPT
 ```
-* ### Install OrhanErday/OpenAI
+
+### Install OrhanErday/OpenAI
 ```sh
 composer require orhanerday/open-ai
 ```
 
-* ### Set your OpenAI API key as the `$open_ai_key` variable in `event-stream.php`
+### Set your OpenAI API key as the `$open_ai_key` variable in `event-stream.php`
 ```php
 $open_ai_key = ""; 
 ```
 
-* ### Start the PHP built-in web server
+### Start the PHP built-in web server
 ```sh
 php -S localhost:8000 -t .
 ```
-* ### Open your web browser and go to http://localhost:8000
 
-* ### You should now see the ChatGPT clone interface, where you can chat with the OpenAI language model.
+### Open your web browser and go to http://localhost:8000
+
+You should now see the ChatGPT clone interface, where you can chat with the OpenAI language model.
 
 <hr>
 
@@ -133,6 +157,15 @@ http://localhost:8000
 
 ## Chat History
 This project saves chat history using cookies by default. If you want to change this to use authentication instead, you can modify the code in index.php to save chat history in a database or other storage mechanism.
+
+## Tools Explanation
+This project includes additional tools to enhance the ChatGPT clone functionality:
+
+### Weather Tool
+The weather tool retrieves weather information using the free wttr.in service. If a user message contains the word "weather", the tool extracts the location (e.g., "weather in London") and retrieves the weather information for that location. If no location is specified, it defaults to "New York".
+
+### Stock Tool
+The stock tool retrieves stock information using the free Stooq API. If a user message contains the word "stock" or "price", the tool extracts the stock symbol (e.g., "stock AAPL") and retrieves the stock information for that symbol. If no symbol is specified, it defaults to "AAPL".
 
 ## Credits
 This project is powered by the github.com/orhanerday/OpenAI php library, which provides an easy-to-use interface for communicating with the OpenAI API.
